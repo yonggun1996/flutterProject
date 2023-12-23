@@ -15,19 +15,21 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.lightBlue,
           title: Text("앱임", selectionColor: Colors.white),
         ),//상단 위젯
-        body: Container(
-          child: Text("안녕"),
-        ),//앱 콘텐츠
-        bottomNavigationBar: BottomAppBar(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly, // 가로축 정렬
-            children: [
-              Icon(Icons.phone),
-              Icon(Icons.message),
-              Icon(Icons.contact_page)
-            ],
+        // body: Container(
+        //   width: 150, height: 150,
+        //   margin: EdgeInsets.fromLTRB(0, 50, 0, 0),
+        //   padding: EdgeInsets.all(10),
+        //   decoration: BoxDecoration(
+        //     border: Border.all(color: Colors.black)
+        //   ),
+        //   child: Text("Body"),
+        // )
+        body: Align(
+          alignment: Alignment.centerLeft,
+          child: Container(
+            width: 150, height: 150, color: Colors.blue,
           ),
-        )//하단 네비게이션 바
+        ),
       )
     );
   }
