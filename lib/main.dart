@@ -12,23 +12,39 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.lightBlue,
-          title: Text("앱임", selectionColor: Colors.white),
-        ),//상단 위젯
-        // body: Container(
-        //   width: 150, height: 150,
-        //   margin: EdgeInsets.fromLTRB(0, 50, 0, 0),
-        //   padding: EdgeInsets.all(10),
-        //   decoration: BoxDecoration(
-        //     border: Border.all(color: Colors.black)
-        //   ),
-        //   child: Text("Body"),
-        // )
-        body: Align(
-          alignment: Alignment.centerLeft,
-          child: Container(
-            width: 150, height: 150, color: Colors.blue,
+          title: Row(
+            children: [
+              Text("금호동3가"),
+              IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_drop_down))
+            ],
           ),
+        ),
+        body: SizedBox(
+          width: double.infinity,
+          height: 140,
+          child: Row(
+            children: [
+              Image.asset("/camera.jpg"),
+              Flexible(child:
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start, // Text를 왼쪽에서 부터 시작
+                  children: [
+                    Text("캐논 DSLR 100D (단렌즈 충전기 16기가SD 포함)"),
+                    Text("성동구 행당동 끌올 10분 전"),
+                    Text("210,000원"),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end, // 버튼과 텍스트를 오른쪽에서 부터 시작
+                      children: [
+                        IconButton(onPressed: () {}, icon: const Icon(Icons.favorite_border)),
+                        Text("4")
+                      ],
+                    )
+                  ],
+                )
+              )
+            ],
+          )
         ),
       )
     );
